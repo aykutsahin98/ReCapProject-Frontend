@@ -1,0 +1,21 @@
+<div class="alert alert-success" role="alert">
+    Müşteriler
+  </div>
+
+<table *ngIf="dataLoaded==true" class="table table-hover">
+    <thead>
+        <tr>
+        <th>Müşteri Id</th>
+        <th>Adı Soyadı</th>
+        <th>Şirket</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.userName}}</td>
+            <td>{{customer.companyName}}</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,27 @@
+<div class="alert alert-success" role="alert" text ="text-center">
+    Kiralık Araç Listesi
+  </div>
+<table *ngIf="dataLoaded==true" class="table table-hover">
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Araç Markası</th>
+        <th>Renk</th>
+        <th>Müşteri</th>
+        <th>Şirket</th>
+        <th>Kiralama Tarihi</th>
+        <th>Teslim Tarihi</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rental of rentals">
+            <td>{{rental.rentalId}}</td>
+            <td>{{rental.carName}}</td>
+            <td>{{rental.colorName}}</td>
+            <td>{{rental.userName}}</td>
+            <td>{{rental.companyName}}</td>
+            <td>{{rental.rentDate}}</td>
+            <td>{{rental.returnDate}}</td>
+        </tr>
+    </tbody>
+</table>
