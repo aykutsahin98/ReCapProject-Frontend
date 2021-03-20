@@ -1,30 +1,23 @@
-<div *ngIf="dataLoaded==false" class="text-center">
-    <div class="spinner-border" role="status">
-      <span class="visually-hidden">Loading...</span>
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="row" *ngIf="dataLoaded==true"  >
+  <div *ngFor="let car of cars" class="card" style="width: 20rem; padding: 10px; margin:10px;">
+    <img src="https://localhost:44340/{{car.imagePath}}" class="card-img-top" alt="{{car.descriptions}} Image" width="318" height="200">
+    <div  class="card-body">
+    </div >
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Marka:</b><span style="float: right;"> {{car.brandName}}</span></li>
+      <li class="list-group-item"><b>Renk:</b><span style="float: right;">{{car.colorName}}</span></li>
+      <li class="list-group-item"><b>Model Yılı:</b> <span style="float: right;">{{car.modelYear}}</span></li>
+      <li class="list-group-item"><b>Fiyat:</b><span style="float: right;">{{car.dailyPrice}} </span></li>
+    </ul>
+    <div class="card-body">
+      <section style="float:left">
+        <button routerLink="/cars/cardetail/{{car.carId}}" type="button" class="btn btn-primary">Detaylar</button>
+        
+      </section>
+     
     </div>
   </div>
-
-  <div class="alert alert-success" role="alert">
-    Araç Listesi
-  </div>
-
-<table *ngIf="dataLoaded!=false" class="table table-hover">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Marka</th>
-      <th>Renk</th>
-      <th>Model Yılı</th>
-      <th>Günlük Fiyat</th>
-      <th>Açıklama</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let car of cars">
-    <td>{{ car.carId }}</td>
-    <td>{{ car.brandName }}</td>
-    <td>{{ car.colorName }}</td>
-    <td>{{ car.modelYear }}</td>
-    <td>{{ car.dailyPrice }}</td>
-    <td>{{ car.descriptions }}</td>
-  </tr>
-</table>
+</div>

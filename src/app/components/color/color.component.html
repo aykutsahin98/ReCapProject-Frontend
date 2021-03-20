@@ -1,6 +1,14 @@
-<div class="alert alert-danger" role="alert">
-    Renkler
-  </div>
-<ul class="list-group" *ngFor="let color of colors">
-    <li class="list-group-item">{{color.colorName}}</li>
-  </ul>
+<ul class="list-group" style="margin: 5px">
+  <li routerLink="/cars" [class]="getAllColorClass()">TÜM RENKLER</li>
+  <li
+    (click)="setCurrentColor(color)"
+    routerLink="/cars/color/{{ color.colorId }}"
+    [class]="getCurrentColorClass(color)"
+    *ngFor="let color of colors"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>
+<h5 *ngIf="currentColor">
+  {{ currentColor.colorName }},{{ currentColor.colorId }} seçtiniz
+</h5>

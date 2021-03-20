@@ -1,21 +1,21 @@
-<div class="alert alert-success" role="alert">
-    Müşteriler
-  </div>
-
-<table *ngIf="dataLoaded==true" class="table table-hover">
-    <thead>
+<div class="card text-center">
+  <div class="card-header">Tüm Müşteriler</div>
+  <div class="card-body">
+    <table class="table table-success table-striped table-hover">
+      <thead>
         <tr>
-        <th>Müşteri Id</th>
-        <th>Adı Soyadı</th>
-        <th>Şirket</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let customer of customers">
-            <td>{{customer.customerId}}</td>
-            <td>{{customer.userName}}</td>
-            <td>{{customer.companyName}}</td>
+          <th scope="col">Id</th>
+          <th scope="col">Müşteri Ad Soyad</th>
+          <th scope="col">Şirket</th>
         </tr>
-    </tbody>
-</table>
-
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{ customer.customerId }}</td>
+            <td>{{ customer.userName}}</td>
+            <td>{{ customer.companyName}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
