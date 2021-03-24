@@ -11,6 +11,7 @@ export class ColorComponent implements OnInit {
 
   colors:Color[]=[];
   currentColor:Color;
+  filterTextColor="";
   dataLoaded=false;
   constructor(private colorService:ColorService) { }
 
@@ -20,7 +21,7 @@ export class ColorComponent implements OnInit {
 
   getColors()
   {
-    this.colorService.getCars().subscribe(response=>
+    this.colorService.getColors().subscribe(response=>
       {
         this.colors=response.data
         this.dataLoaded=true

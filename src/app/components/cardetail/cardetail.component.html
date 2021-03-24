@@ -3,8 +3,8 @@
     <div class="picsum-img-wrapper">
       <img
         class="d-block w-100"
-        style="width: 850px; height: 550px"
-        src="https://localhost:44340/{{ car.imagePath }}"
+        style="width: 900px; height: 435px"
+        src="https://localhost:44340{{ car.imagePath }}"
       />
     </div>
   </ng-template>
@@ -14,13 +14,28 @@
 
 <div class="card" *ngFor="let car of carDetails; let i = index">
   <div class="card-body" *ngIf="i < 1">
-    <h5 class="card-title">{{ car.brandName }}</h5>
+    <h5 class="card-title">{{ car.brandName }} {{ car.description }}</h5>
     <hr />
-    <p class="card-text"><b>Açıklama:</b> {{ car.description }}</p>
-    <p class="card-text"><b>Renk:</b>{{ car.colorName }}</p>
-    <p class="card-text"><b>Yıl:</b>{{ car.modelYear }}</p>
-    <p class="card-text"><b>Fiyat:</b> {{ car.dailyPrice }}</p>
-    <a href="#" class="btn btn-primary">Kirala</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Marka</th>
+          <th>Renk</th>
+          <th>Yıl</th>
+          <th>Fiyat</th>
+          <th>İşlem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-secondary">
+          <td>{{ car.brandName }}</td>
+          <td>{{ car.colorName }}</td>
+          <td>{{ car.modelYear }}</td>
+          <td>{{ car.dailyPrice | currency: "₺" }}</td>
+          <td><app-rental [car]="car"></app-rental></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

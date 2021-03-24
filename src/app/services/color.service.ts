@@ -12,7 +12,7 @@ export class ColorService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getCars():Observable<listResponseModel<Color>>
+  getColors():Observable<listResponseModel<Color>>
   {
     return this.httpClient.get<listResponseModel<Color>>(this.apiUrl)
   }

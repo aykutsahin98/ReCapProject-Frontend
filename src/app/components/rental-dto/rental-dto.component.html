@@ -1,0 +1,25 @@
+<div class="card text-center">
+    <div class="card-header">Tüm Müşteriler</div>
+    <div class="card-body">
+      <table class="table table-success table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Marka</th>
+            <th scope="col">Müşteri Adı</th>
+            <th scope="col">Model</th>
+            <th scope="col">Kiralama Tarihi</th>
+            <th scope="col">Teslim Tarihi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rental of rentalDtos">
+            <td>{{rental.rentalId}}</td>
+            <td>{{rental.brandName}}</td>
+            <td>{{rental.userName}}</td>
+            <td>{{rental.modelYear}}</td>
+            <td>{{rental.rentDate}}</td>    
+        <td><span *ngIf="rental.returnDate">{{ rental.returnDate }}</span>
+            <span *ngIf="!rental.returnDate">Teslim tarihi bilinmiyor</span></td>
+    </tr>
+    </table>

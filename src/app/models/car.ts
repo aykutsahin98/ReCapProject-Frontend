@@ -8,4 +8,5 @@ export interface Car {
   Id: number;
   imagePath: string;
   date: Date;
+  status: boolean;
 }

@@ -9,12 +9,11 @@ import { Customer } from '../models/customer';
 })
 export class CustomerService {
 
-  apiUrl = 'https://localhost:44340/api/';
+  apiUrl = 'https://localhost:44340/api/customers/getallcustomerdetails';
 
   constructor(private httpClient: HttpClient) { }
 
-  getCustomers():Observable<listResponseModel<Customer>> {
-    return this.httpClient
-      .get<listResponseModel<Customer>>(this.apiUrl + 'customers/getallcustomerdetails');
+  getCustomer():Observable<listResponseModel<Customer>> {
+    return this.httpClient.get<listResponseModel<Customer>>(this.apiUrl)
   }
 }
