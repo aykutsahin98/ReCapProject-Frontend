@@ -1,0 +1,61 @@
+<!-- Button trigger modal -->
+
+<button style="margin-top: 22px;width: 120px;" routerLink="cars/carupdate/{{carForUpdate.carId}}" type="button" class=" btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Güncelle
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="    margin-left: 180px;">Güncelle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color:black">
+        <div class="card-body">
+          <form [formGroup]="carUpdateForm">
+            <div class="mb-3">
+              <label for="colorId">Renk seç</label>
+
+              <div class="col-sm-12">
+                <select class="form-control" formControlName="colorId">
+                  <option *ngFor="let color of colors" selected="carForUpdate.colorId" [ngValue]="color.colorId">{{color.colorName}}</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="mb-3">
+              <label for="brandId">Marka seç</label>
+                  <div class="col-sm-12">
+                <select class="form-control" formControlName="brandId">
+                  <option *ngFor="let brand of brands" selected="carForUpdate.brandId" [ngValue]="brand.brandId">{{brand.brandName}}</option>
+                </select>
+                  </div>
+
+            </div>
+            <div class="mb-3">
+              <label for="modelYear">Model Yılı</label>
+              <input type="number" id="modelYear" formControlName="modelYear"
+                     class="form-control" placeholder="{{carForUpdate.modelYear}}">
+            </div>
+            <div class="mb-3">
+              <label for="dailyPrice">Günlük Fiyatı</label>
+              <input type="number" id="dailyPrice" formControlName="dailyPrice"
+                     class="form-control" placeholder="{{carForUpdate.dailyPrice}}">
+            </div>
+            <div class="mb-3">
+              <label for="description">Açıklama</label>
+              <input type="text" id="description" formControlName="description"
+                     class="form-control"value="{{carForUpdate.description}}" placeholder="{{carForUpdate.description}}">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Kapat</button>
+        <button (click)="update()" type="button" class="btn btn-warning"  data-bs-dismiss="modal">Değişiklikleri kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>

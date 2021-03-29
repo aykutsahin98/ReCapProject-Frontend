@@ -1,10 +1,23 @@
-<div style="margin-top:10px;"  class="mb-3">
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="marka ara">
+<div style="margin-top: 10px" class="mb-3">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="marka ara"
+  />
 </div>
 <div *ngIf="filterText" class="alert alert-success">
-  {{filterText}} aradınız
+  {{ filterText }} aradınız
 </div>
-<ul class="list-group" style="margin: 5px;">
-  <li routerLink="/" [class]="getAllBrandClass()" >TÜM MARKALAR</li>
-  <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}"  [class]="getCurrentBrandClass(brand)" *ngFor="let brand of brands | brandFilter:filterText">{{brand.brandName}}</li>
+<ul class="list-group" style="margin: 5px">
+  <li routerLink="/" [class]="getAllBrandClass()">TÜM MARKALAR</li>
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="/cars/brand/{{ brand.brandId }}"
+    [class]="getCurrentBrandClass(brand)"
+    *ngFor="let brand of brands | brandFilter: filterText"
+  >
+    {{ brand.brandName }}
+  </li>
 </ul>

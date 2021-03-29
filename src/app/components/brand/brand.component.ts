@@ -8,7 +8,7 @@ import { BrandService } from 'src/app/services/brand.service';
   styleUrls: ['./brand.component.css'],
 })
 export class BrandComponent implements OnInit {
-  brands: Brand[] = [];
+  brands: Brand[];
   currentBrand: Brand;
   filterText = '';
   dataLoaded = false;

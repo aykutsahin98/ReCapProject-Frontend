@@ -6,6 +6,17 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { RentalDtoComponent } from './components/rental-dto/rental-dto.component';
 import {PaymentComponent} from './components/payment/payment.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { CarListComponent } from './components/car-list/car-list.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:CarComponent},
@@ -20,7 +31,21 @@ const routes: Routes = [
   {path:"rental/:carId",component:RentalComponent},
   {path:"rentalDtos",component:RentalDtoComponent},
   {path:"payment/:rental",component:PaymentComponent},
-  {path:"customers",component:CustomerComponent}
+  {path:"customers",component:CustomerComponent},
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent },
+  { path: "car-add", component:  CarAddComponent},
+  { path: "brandadd", component:  BrandAddComponent},
+  { path: "brandupdate", component:  BrandUpdateComponent},
+  { path: "brandlist/brandupdate/:brandId", component:  BrandUpdateComponent},
+  { path: "colorlist/colorupdate/:colorId", component:  ColorUpdateComponent},
+  { path: "coloradd", component:  ColorAddComponent},
+  { path: "colorlist", component:  ColorListComponent},
+  { path: "colorupdate", component:  ColorUpdateComponent},
+  { path: "brandlist", component:  BrandListComponent},
+  { path: "car-list", component:  CarListComponent},
+  { path: "carupdate", component:  CarUpdateComponent},
+  { path: "cars/carupdate/:carId", component:  CarUpdateComponent}
 ];
 
 @NgModule({

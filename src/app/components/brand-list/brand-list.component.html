@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row my-2 ml-2">
+      <button
+        routerLink="/brandadd"
+        type="button"
+        class="btn btn-success center rounded-pill"
+      >
+        Add New Brand
+      </button>
+    </div>
+    <div class="row">
+      <div
+        *ngIf="dataLoaded == false"
+        class="spinner-border text-primary"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <table
+        *ngIf="dataLoaded != false"
+        class="table table-hover table-striped table-bordered"
+      >
+        <thead>
+          <tr>
+            <th scope="col">Brand Id</th>
+            <th scope="col">Brand Name</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let brand of brands">
+            <td>{{ brand.brandId }}</td>
+            <th scope="row">{{ brand.brandName }}</th>
+            <td>
+              <div class="d-flex justify-content-center">
+                <button routerLink="brandupdate/{{brand.brandId}}" type="button" class="btn btn-success">Edit</button>
+                <button  type="button" class="btn btn-danger" (click)="deleteBrand(brand)" >Delete</button>
+
+              </div>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

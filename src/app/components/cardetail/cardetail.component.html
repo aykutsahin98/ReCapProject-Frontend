@@ -14,7 +14,7 @@
 
 <div class="card" *ngFor="let car of carDetails; let i = index">
   <div class="card-body" *ngIf="i < 1">
-    <h5 class="card-title">{{ car.brandName }} {{ car.description }}</h5>
+    <h5 class="card-title">{{ car.brandName }} | {{ car.description }}</h5>
     <hr />
     <table class="table">
       <thead>

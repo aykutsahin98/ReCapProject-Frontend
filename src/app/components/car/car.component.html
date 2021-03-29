@@ -1,22 +1,43 @@
-  <div *ngIf="dataLoaded==false" class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div *ngIf="dataLoaded==false" class="d-flex">
+    <strong>Loading...</strong>
+    <div class="spinner-grow text-info ms-auto" role="status" aria-hidden="true"></div>
   </div>
-  <div class="row" *ngIf="dataLoaded==true"  >
-    <div *ngFor="let car of cars" class="card" style="width: 20rem; padding: 10px; margin:10px;">
-      <img src="https://localhost:44340/{{car.imagePath}}" class="card-img-top" alt="{{car.description}} Image" width="318" height="200">
-      <div  class="card-body">
-      </div >
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><b>Marka:</b><span style="float: right;"> {{car.brandName}}</span></li>
-        <li class="list-group-item"><b>Renk:</b><span style="float: right;">{{car.colorName}}</span></li>
-        <li class="list-group-item"><b>Model Yılı:</b> <span style="float: right;">{{car.modelYear}} </span></li>
-        <li class="list-group-item"><b>Fiyat:</b><span style="float: right;">{{car.dailyPrice | currency:"₺"}}  </span></li>
-      </ul>
-      <div class="card-body">
-        <section style="float:left">
-          <button routerLink="/cars/cardetail/{{car.carId}}" type="button" class="btn btn-primary">Detaylar</button>
-        </section>
-       
-      </div>
-    </div>
+  <app-car-filter></app-car-filter>
+  <div class="table-responsive">
+    <table *ngIf="dataLoaded==true" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col"></th>
+          <th scope="col">Brand</th>
+          <th scope="col">Description</th>
+          <th scope="col">Color</th>
+          <th scope="col">Model Year</th>
+          <th scope="col">Daily Price</th>
+          <th scope="col-auto"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+         
+          <th scope="row">{{car.carId}}</th>
+          <td><img src="https://localhost:44340/{{car.imagePath}}" alt="" width="100px" height="80px"></td>
+          <td>{{car.brandName}}</td>
+          <td>{{car.description}}</td>
+          <td>{{car.colorName}}</td>
+          <td>{{car.modelYear}}</td>
+          <td>{{car.dailyPrice}}</td>
+
+          <td>
+            <button routerLink="/cars/cardetail/{{car.carId}}" type="button" 
+            class="btn btn-primary">Detaylar</button><br><br>
+
+            <button routerLink="/cars/carupdate/{{car.carId}}" type="button" 
+            class="btn btn-danger">Düzenle</button>
+          
+          
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>

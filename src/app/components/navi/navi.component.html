@@ -31,19 +31,50 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown
+            Araç İşlemleri
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a  class="dropdown-item" href="car-add">Araç Ekleme</a></li>
+            <li><a  class="dropdown-item" href="carupdate">Update</a></li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Marka İşlemleri
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a  class="dropdown-item" href="brandlist">Marka Listesi</a></li>
+            <li><hr class="dropdown-divider" /></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Renk İşlemleri
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a  class="dropdown-item" href="colorlist">Renk İşlemleri</a></li>
+            <li><hr class="dropdown-divider" /></li>
+          </ul>
+        </li>
       </ul>
-        <button class="btn btn-outline-primary" type="submit">Giriş Yap</button>&#170;
-        <button class="btn btn-outline-danger" type="submit">Üye Ol</button>
+      <button routerLink="/register/" class="btn btn-outline-danger" type="submit">Sign Up</button>&nbsp;
+        <button routerLink="/login/" class="btn btn-outline-primary" type="submit">Sign In</button>
     </div>
   </div>
 </nav>

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row my-2 ml-2">
+      <button
+        routerLink="/coloradd"
+        type="button"
+        class="btn btn-success center rounded-pill"
+      >
+        Add New Color
+      </button>
+    </div>
+    <div class="row">
+      <div
+        *ngIf="dataLoaded == false"
+        class="spinner-border text-primary"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <table
+        *ngIf="dataLoaded != false"
+        class="table table-hover table-striped table-bordered"
+      >
+        <thead>
+          <tr>
+            <th scope="col">Color Id</th>
+            <th scope="col">Color Name</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let color of colors">
+            <td>{{ color.colorId }}</td>
+            <th scope="row">{{ color.colorName }}</th>
+            <td>
+              <div class="d-flex justify-content-center">
+                <button routerLink="colorupdate/{{color.colorId}}" type="button" class="btn btn-success">Edit</button>
+                <button  type="button" class="btn btn-danger" (click)="deleteColor(color)" >Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

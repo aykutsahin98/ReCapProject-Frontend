@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from '@angular/forms'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,8 +19,21 @@ import { CarFilterComponent } from './components/car-filter/car-filter.component
 import { RentalComponent } from './components/rental/rental.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
+
 import{ToastrModule} from "ngx-toastr";
 import { RentalDtoComponent } from './components/rental-dto/rental-dto.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { CarListComponent } from './components/car-list/car-list.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
 
 
 @NgModule({
@@ -37,7 +50,18 @@ import { RentalDtoComponent } from './components/rental-dto/rental-dto.component
     ColorFilterPipe,
     RentalComponent,
     PaymentComponent,
-    RentalDtoComponent
+    RentalDtoComponent,
+    LoginComponent,
+    RegisterComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    BrandUpdateComponent,
+    ColorAddComponent,
+    ColorUpdateComponent,
+    BrandListComponent,
+    CarListComponent,
+    CarUpdateComponent,
+    ColorListComponent,
     
     
   ],
@@ -46,6 +70,7 @@ import { RentalDtoComponent } from './components/rental-dto/rental-dto.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbModule,
     ToastrModule.forRoot(
@@ -53,7 +78,9 @@ import { RentalDtoComponent } from './components/rental-dto/rental-dto.component
         positionClass:"toast-bottom-right"
       })
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
