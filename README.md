@@ -21,8 +21,7 @@
 <summary>Color Operations</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113740900-cf19b380-9709-11eb-9cae-6a967d02c116.jpg" width="65%">
 
-
-<summary>Color Operations</summary>
+<summary>Brand Operations</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113741107-fcfef800-9709-11eb-90de-3ad114968c31.jpg" width="65%"> 
 
 
