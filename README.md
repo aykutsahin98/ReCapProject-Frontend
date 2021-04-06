@@ -1,6 +1,6 @@
 # Rent A Car Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+[Angular](https://github.com/angular/angular-cli) ve [Bootstrap 5.0] (https://getbootstrap.com) Kullanılarak Geliştirilmiştir.
 
 ## Development server
 
