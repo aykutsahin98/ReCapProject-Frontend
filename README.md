@@ -27,5 +27,8 @@
 <summary>Brand Operations</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113741107-fcfef800-9709-11eb-90de-3ad114968c31.jpg" width="65%"> 
 
+<summary>Profil Bilgileri</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113744732-a4c9f500-970d-11eb-97ce-34f431762cd3.jpg" width="65%">
+
 
 
