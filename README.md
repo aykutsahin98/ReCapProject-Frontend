@@ -18,10 +18,14 @@
 <summary>Araç Listesi</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113742487-587db580-970b-11eb-9a33-2c437c005979.jpg" width="65%">
 
+<summary>Kiralama Sayfası</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113741271-23bd2e80-970a-11eb-971f-7997bc70dc9d.jpg" width="65%">
+
 <summary>Color Operations</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113740900-cf19b380-9709-11eb-9cae-6a967d02c116.jpg" width="65%">
 
 <summary>Brand Operations</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113741107-fcfef800-9709-11eb-90de-3ad114968c31.jpg" width="65%"> 
+
 
 
