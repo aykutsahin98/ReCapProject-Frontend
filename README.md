@@ -16,7 +16,7 @@
 <img src="https://user-images.githubusercontent.com/36954450/113724161-beae0c80-96fa-11eb-9866-40d8e1bc54e8.jpg">
 
 <summary>Araç Listesi</summary>
-<img src="https://user-images.githubusercontent.com/36954450/113742487-587db580-970b-11eb-9a33-2c437c005979.jpg" width="70%">
+<img src="https://user-images.githubusercontent.com/36954450/113742487-587db580-970b-11eb-9a33-2c437c005979.jpg" width="60%">
 
 ## Development server
 
