@@ -9,13 +9,16 @@ export class LocalStorageService {
   constructor() { 
      this.localStorage = window.localStorage;
   }
+  get(key : string){
+   return this.localStorage.getItem(key);
+ }
 
   setToken(key: string, value: string) {
     localStorage.setItem(key,value);
  }
 
- getToken(key : string) {
-    return localStorage.getItem(key);
+ getToken() {
+    return localStorage.getItem("token");
  }
 
  removeToken(key: string) {

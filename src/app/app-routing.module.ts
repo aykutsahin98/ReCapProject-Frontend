@@ -17,9 +17,12 @@ import { CarListComponent } from './components/car-list/car-list.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
-  {path:"",pathMatch:"full",component:CarComponent},
+  {path:"",component:HomeComponent},
+ // {path:"",pathMatch:"full",component:CarComponent},
   {path:"cars",component:CarComponent},
   {path:"cars/brand/:brandId",component:CarComponent},
   {path:"cars/color/:colorId",component:CarComponent},
@@ -45,7 +48,8 @@ const routes: Routes = [
   { path: "brandlist", component:  BrandListComponent},
   { path: "car-list", component:  CarListComponent},
   { path: "carupdate", component:  CarUpdateComponent},
-  { path: "cars/carupdate/:carId", component:  CarUpdateComponent}
+  { path: "cars/carupdate/:carId", component:  CarUpdateComponent},
+  {path:"profile", component: ProfileComponent}
 ];
 
 @NgModule({

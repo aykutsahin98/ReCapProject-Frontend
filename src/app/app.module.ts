@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import { CardModule, } from 'primeng/card';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +36,11 @@ import { BrandListComponent } from './components/brand-list/brand-list.component
 import { CarListComponent } from './components/car-list/car-list.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { BrandcolorcategoryComponent } from './components/brandcolorcategory/brandcolorcategory.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -62,6 +69,10 @@ import { ColorListComponent } from './components/color-list/color-list.component
     CarListComponent,
     CarUpdateComponent,
     ColorListComponent,
+    FooterComponent,
+    HomeComponent,
+    BrandcolorcategoryComponent,
+    ProfileComponent,
     
     
   ],
@@ -69,6 +80,8 @@ import { ColorListComponent } from './components/color-list/color-list.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    JwtModule,
+    CardModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

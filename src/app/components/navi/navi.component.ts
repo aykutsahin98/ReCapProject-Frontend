@@ -12,7 +12,7 @@ import {User} from '../../models/user';
   styleUrls: ['./navi.component.css']
 })
 export class NaviComponent implements OnInit {
-  email = this.localStorageService.getToken('email');
+  email = this.localStorageService.get('email');
   user:User=new User();
 
   constructor(private authService:AuthService,private localStorageService:LocalStorageService,private userService:UserService,private  toastrService:ToastrService,private router:Router) { }
@@ -32,7 +32,7 @@ export class NaviComponent implements OnInit {
   }
 
   checkToEmail(){
-    if(this.localStorageService.getToken('email')){
+    if(this.localStorageService.get('email')){
       return true;
     }else{
       return false;

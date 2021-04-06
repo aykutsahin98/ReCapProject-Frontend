@@ -1,61 +1,39 @@
-<!-- Button trigger modal -->
-
-<button style="margin-top: 22px;width: 120px;" routerLink="cars/carupdate/{{carForUpdate.carId}}" type="button" class=" btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Güncelle
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="    margin-left: 180px;">Güncelle</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-3">
+          <app-brand></app-brand>
+          <app-color></app-color>
       </div>
-      <div class="modal-body" style="color:black">
-        <div class="card-body">
+      <div class="col-md-9">
           <form [formGroup]="carUpdateForm">
-            <div class="mb-3">
-              <label for="colorId">Renk seç</label>
-
-              <div class="col-sm-12">
-                <select class="form-control" formControlName="colorId">
-                  <option *ngFor="let color of colors" selected="carForUpdate.colorId" [ngValue]="color.colorId">{{color.colorName}}</option>
-                </select>
-              </div>
-
-            </div>
-            <div class="mb-3">
-              <label for="brandId">Marka seç</label>
-                  <div class="col-sm-12">
-                <select class="form-control" formControlName="brandId">
-                  <option *ngFor="let brand of brands" selected="carForUpdate.brandId" [ngValue]="brand.brandId">{{brand.brandName}}</option>
-                </select>
-                  </div>
-
-            </div>
-            <div class="mb-3">
-              <label for="modelYear">Model Yılı</label>
-              <input type="number" id="modelYear" formControlName="modelYear"
-                     class="form-control" placeholder="{{carForUpdate.modelYear}}">
-            </div>
-            <div class="mb-3">
-              <label for="dailyPrice">Günlük Fiyatı</label>
-              <input type="number" id="dailyPrice" formControlName="dailyPrice"
-                     class="form-control" placeholder="{{carForUpdate.dailyPrice}}">
-            </div>
-            <div class="mb-3">
-              <label for="description">Açıklama</label>
-              <input type="text" id="description" formControlName="description"
-                     class="form-control"value="{{carForUpdate.description}}" placeholder="{{carForUpdate.description}}">
-            </div>
-          </form>
-        </div>
+              <div class="mb-3">
+                  
+                  <label for="example-date-input" class="col-4 col-form-label">Marka</label>
+                  <select class="form-select"  formControlName="brandId" [(ngModel)]="brandId"  aria-label="Default select example">
+                      <option *ngFor="let brand of brands"  [ngValue]="brand.brandId">{{brand.brandName}}</option>            
+                  </select>   
+              </div>  
+              <div class="mb-3">
+                  <label for="example-date-input" class="col-4 col-form-label">Renk</label>
+                  <select class="form-select"   formControlName="colorId"  [(ngModel)]="colorId"  aria-label="Default select example">
+                      <option *ngFor="let color of colors"  [ngValue]="color.colorId">{{color.colorName}}</option>            
+                  </select>    
+              </div>  
+              <div class="mb-3">
+                  <label for="dailyPrice" class="form-label">Günlük Ücret</label>
+                  <input type="number" formControlName="dailyPrice"  class="form-control" id="dailyPrice" aria-describedby="emailHelp">
+                </div>     
+                <div class="mb-3">
+                  <label for="modelYear" class="form-label">Model</label>
+                  <input type="number" formControlName="modelYear" class="form-control" id="modelYear" aria-describedby="emailHelp">
+                </div>    
+                <div class="mb-3">
+                  <label for="description" class="form-label">Açıklama</label>
+                  <input type="text" formControlName="description" class="form-control" id="description" aria-describedby="emailHelp">
+                </div>    
+                <button type="submit" (click)="update()" class="btn btn-success btn-sm">Oluştur</button>            
+            </form> 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Kapat</button>
-        <button (click)="update()" type="button" class="btn btn-warning"  data-bs-dismiss="modal">Değişiklikleri kaydet</button>
-      </div>
-    </div>
   </div>
+
 </div>

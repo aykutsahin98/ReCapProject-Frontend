@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg" style="background-color: rgb(223, 106, 10);">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Anasayfa</a>
+    <a class="navbar-brand text-white" href="/">Anasayfa</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -14,68 +14,56 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/rentalDtos"
+        <li class="nav-item ">
+          <a class="nav-link active text-white" aria-current="page" href="/rentalDtos"
             >Kiralamalar</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/customers">Müşteriler</a>
+          <a class="nav-link text-white" href="/customers">Müşteriler</a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Araç İşlemleri
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a  class="dropdown-item" href="car-add">Araç Ekleme</a></li>
-            <li><a  class="dropdown-item" href="carupdate">Update</a></li>
-            <li><hr class="dropdown-divider" /></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/cars">Araçlarımız</a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Marka İşlemleri
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a  class="dropdown-item" href="brandlist">Marka Listesi</a></li>
-            <li><hr class="dropdown-divider" /></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Renk İşlemleri
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a  class="dropdown-item" href="colorlist">Renk İşlemleri</a></li>
-            <li><hr class="dropdown-divider" /></li>
-          </ul>
-        </li>
+      
       </ul>
-      <button routerLink="/register/" class="btn btn-outline-danger" type="submit">Sign Up</button>&nbsp;
-        <button routerLink="/login/" class="btn btn-outline-primary" type="submit">Sign In</button>
+
+      <div class="text-end" *ngIf="checkToLogin()==false">
+        <button routerLink="/login/" type="button" class="btn btn-succes text-black" style="margin-right: 10px;    background-color:white;
+            border-color: #084e2d;">
+          Giriş yap
+        </button>
+        <button routerLink="/register/" type="button" class="btn btn-success" style="    background-color:black;
+            border-color: #084e2d;">
+          Kayıt ol
+        </button>
+      </div>
+      <div class="dropdown text-end" *ngIf="checkToEmail()==true">
+        <a
+         
+          class="d-block link-dark text-decoration-none dropdown-toggle"
+          id="dropdownUser1"
+          data-bs-toggle="dropdown"
+          aria-expanded="true"
+           type="button"
+           style="color: white;"
+        >
+        
+        {{this.user.userName}}
+        
+        </a>
+        <div class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+          <li><a routerLink="/profile/" class="dropdown-item">Profili düzenle</a></li>
+          <li><a routerLink="car-add" class="dropdown-item">Car List</a></li>
+          <li><a routerLink="brandlist" class="dropdown-item">Brand List</a></li>
+          <li><a routerLink="colorlist" class="dropdown-item">Color List</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <a (click)="logOut()" class="dropdown-item">Çıkış yap</a>
+        </div>
+
     </div>
   </div>
-</nav>
+  </div>
+  </nav>
+
 

@@ -3,7 +3,7 @@
       <button
         routerLink="/brandadd"
         type="button"
-        class="btn btn-success center rounded-pill"
+        class="btn btn-primary center rounded-pill"
       >
         Add New Brand
       </button>
@@ -33,8 +33,8 @@
             <th scope="row">{{ brand.brandName }}</th>
             <td>
               <div class="d-flex justify-content-center">
-                <button routerLink="brandupdate/{{brand.brandId}}" type="button" class="btn btn-success">Edit</button>
-                <button  type="button" class="btn btn-danger" (click)="deleteBrand(brand)" >Delete</button>
+                <button routerLink="brandupdate/{{brand.brandId}}" type="button" style="width: 100px;" class="btn btn-warning">Edit</button>&nbsp;&nbsp;
+                <button  type="button" class="btn btn-danger" style="width: 100px;" (click)="deleteBrand(brand)" >Delete</button>
 
               </div>
               

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder,FormControl,Validators} from "@angular/forms"
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Brand } from 'src/app/models/brand';
 import { Car } from 'src/app/models/car';
@@ -14,62 +15,77 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./car-update.component.css']
 })
 export class CarUpdateComponent implements OnInit {
-  carUpdateForm: FormGroup;
-  currentCar: Car;
-  brands:Brand[]=[]
-  colors:Color[]=[]
-  @Input() carForUpdate:Car
 
-  constructor(private formBuilder: FormBuilder,
-              private carService: CarService,
-              private toastrService: ToastrService,
-              private brandService:BrandService,
-              private colorService:ColorService,) {
-  }
+  carUpdateForm:FormGroup;
+  colors:Color[];
+  brands:Brand[];
+  brandId:number;
+  colorId:number;
+  constructor(
+    private brandService:BrandService,
+    private colorService:ColorService,
+    private carService:CarService,
+    private toastr:ToastrService,
+    private activatedRoute:ActivatedRoute,
+    private formBuilder:FormBuilder
+  ) { }
 
   ngOnInit(): void {
-    this.currentCar = this.getCurrentCar();
-    console.log(this.carForUpdate)
-    this.createCarUpdateForm();
-    this.getBrands()
-    this.getColors()
-  }
+    this.activatedRoute.params.subscribe(params=>{
+      this.createdUpdateForm();
+      if(params["carId"]){
+        this.getColors();
+        this.getBrands();
+        this.getCar(params["carId"]);
+      }
+    })
   
-  createCarUpdateForm() { 
+  }
+  createdUpdateForm(){
     this.carUpdateForm = this.formBuilder.group({
-      carId: [this.carForUpdate?this.carForUpdate.carId:'', Validators.required],
-      brandId: [this.carForUpdate?this.carForUpdate.brandId:'', Validators.required],
-      colorId: [this.carForUpdate?this.carForUpdate.colorId: '', Validators.required],
-      modelYear: [this.carForUpdate?this.carForUpdate.modelYear:'', Validators.required],
-      dailyPrice: [this.carForUpdate?this.carForUpdate.dailyPrice:'', Validators.required],
-      description: [this.carForUpdate?this.carForUpdate.description:'', Validators.required]
-    });
-  }
-
-  update() {
-    let carModel:Car = Object.assign({}, this.carUpdateForm.value);
-    carModel.carId=this.carForUpdate.carId
-    this.carService.updateCar(carModel).subscribe((response) => {
-      this.toastrService.success(response.message);
-    }, responseError => {
-      console.log(responseError);
-      this.toastrService.error(responseError.error.message);
-    });
-  } 
- 
-  getCurrentCar() {
-    return this.carService.getCurrentCar();
-  }
-  
-  getBrands(){
-    this.brandService.getBrands().subscribe(response => {
-      this.brands = response.data;
+      id:[""],
+      brandId:["",Validators.required],
+      colorId:["",Validators.required],
+      dailyPrice:["",Validators.required],
+      modelYear:["",Validators.required],
+      description:["",Validators.required]
     })
   }
 
+  getCar(carId:number){
+    this.carService.getCarById(carId).subscribe(response=> {
+      this.carUpdateForm.get("id")?.setValue(response.data.carId),
+      this.carUpdateForm.get("brandId")?.setValue(response.data.brandId),
+      this.carUpdateForm.get("colorId")?.setValue(response.data.colorId),
+      this.carUpdateForm.get("dailyPrice")?.setValue(response.data.dailyPrice),
+      this.carUpdateForm.get("description")?.setValue(response.data.description),
+      this.carUpdateForm.get("modelYear")?.setValue(response.data.modelYear)
+    });
+  }
   getColors(){
-    this.colorService.getColors().subscribe(response => {
-      this.colors = response.data;
-    })
+    this.colorService.getColors().subscribe(response=> {this.colors = response.data });
   }
+  getBrands(){
+    this.brandService.getBrands().subscribe(response=> {this.brands = response.data})
+  }
+
+
+  update(){
+    if(this.carUpdateForm.valid){
+      let carUpdateModel = Object.assign({},this.carUpdateForm.value);
+      this.carService.updateCar(carUpdateModel).subscribe(response=> {
+        this.toastr.success(response.message)
+      },responseError=> {
+        if(responseError.error.Errors.length>0){
+            for (let i = 0; i < responseError.error.Errors.length; i++) {
+              this.toastr.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama Hatası")             
+            }
+        }
+      })     
+    }else{
+      this.toastr.error("Doğrulama Hatası!");
+    }
+    
+  }
+
 }

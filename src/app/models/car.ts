@@ -11,4 +11,5 @@ export interface Car {
   imagePath: string;
   date: Date;
   status: boolean;
+  minFindeksScore:number
 }

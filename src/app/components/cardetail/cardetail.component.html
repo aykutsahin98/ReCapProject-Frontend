@@ -3,7 +3,7 @@
     <div class="picsum-img-wrapper">
       <img
         class="d-block w-100"
-        style="width: 900px; height: 435px"
+        style="width: 350px; height: 600px"
         src="https://localhost:44340{{ car.imagePath }}"
       />
     </div>
@@ -23,6 +23,7 @@
           <th>Renk</th>
           <th>Yıl</th>
           <th>Fiyat</th>
+          <th>Findeks Puanı</th>
           <th>İşlem</th>
         </tr>
       </thead>
@@ -32,6 +33,7 @@
           <td>{{ car.colorName }}</td>
           <td>{{ car.modelYear }}</td>
           <td>{{ car.dailyPrice | currency: "₺" }}</td>
+          <td>{{ car.minFindeksScore}}</td>
           <td><app-rental [car]="car"></app-rental></td>
         </tr>
       </tbody>

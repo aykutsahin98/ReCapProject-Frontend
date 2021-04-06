@@ -5,4 +5,5 @@ export class CarDto {
     modelYear: number;
     dailyPrice: number;
     descriptions: string;
+    minFindeksScore:number
   }
