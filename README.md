@@ -15,8 +15,8 @@
 <summary>Anasayfa Ekranı</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113724161-beae0c80-96fa-11eb-9866-40d8e1bc54e8.jpg">
 
-<summary>Anasayfa Ekranı</summary>
-<img src="https://user-images.githubusercontent.com/36954450/113724161-beae0c80-96fa-11eb-9866-40d8e1bc54e8.jpg">
+<summary>Login ve Register Sayfaları</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113729062-531a6e00-96ff-11eb-82d4-3f8db4ea6bd6.jpg"> <img src="" width="30%">
 
 
 ## Development server
