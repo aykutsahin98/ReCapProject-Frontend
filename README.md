@@ -16,7 +16,7 @@
 <img src="https://user-images.githubusercontent.com/36954450/113724161-beae0c80-96fa-11eb-9866-40d8e1bc54e8.jpg">
 
 <summary>Login ve Register Sayfaları</summary>
-<img src="[img]https://i.imgur.com/202VOPl.jpg[/img]" width="30%"> <img src="https://i.imgur.com/WAu6FEg.jpg" width="30%">
+<img src="https://i.imgur.com/202VOPl.jpg" width="30%"> <img src="https://i.imgur.com/WAu6FEg.jpg" width="30%">
 
 
 ## Development server
