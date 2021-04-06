@@ -24,11 +24,4 @@
 <summary>Brand Operations</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113741107-fcfef800-9709-11eb-90de-3ad114968c31.jpg" width="65%>
 
-<summary>Brand Operations</summary>
-<img src="https://user-images.githubusercontent.com/36954450/113741196-143de580-970a-11eb-85f0-8cb4e1728661.jpg">                                                                                                                       
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 
