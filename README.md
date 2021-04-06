@@ -12,6 +12,7 @@
 [![TypeScript](https://img.shields.io/badge/Typescript-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
 ## Proje Arayüzü 
+<summary>Anasayfa Ekranı</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113724161-beae0c80-96fa-11eb-9866-40d8e1bc54e8.jpg">
 
 
