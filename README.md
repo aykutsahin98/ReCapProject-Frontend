@@ -1,27 +1,34 @@
-# Rentacar
+# Rent A Car Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+**[Angular](https://angular.io/cli) ve [Bootstrap v5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/) Kullanılarak Hazırlanmıştır**
 
-## Development server
+- Back-End Projemizin Web Tarafında ki Arayüzüdür.
+- Back-End Projemiz C# ve .Net Core 3.11 kullanılarak, Autofac desteği ile yazılmıştır.
+- Back-End Projesine Ulaşmak İçin, **[Back-End](https://github.com/aykutsahin98/ReCapProject)** tıklayınız.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Kullanılan Teknolojiler ve Versiyonlar
+[![Angular](https://img.shields.io/badge/Angular-v11.2.3-red?style=for-the-badge&logo=angular)](https://angular.io)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-v5.0.0--beta2-blueviolet?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![TypeScript](https://img.shields.io/badge/Typescript-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
-## Code scaffolding
+## Proje Arayüzü 
+<summary>Anasayfa Ekranı</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113724161-beae0c80-96fa-11eb-9866-40d8e1bc54e8.jpg">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<summary>Araç Listesi</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113742487-587db580-970b-11eb-9a33-2c437c005979.jpg" width="65%">
 
-## Build
+<summary>Kiralama Sayfası</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113741271-23bd2e80-970a-11eb-971f-7997bc70dc9d.jpg" width="65%">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<summary>Color Operations</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113740900-cf19b380-9709-11eb-9cae-6a967d02c116.jpg" width="65%">
 
-## Running unit tests
+<summary>Brand Operations</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113741107-fcfef800-9709-11eb-90de-3ad114968c31.jpg" width="65%"> 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<summary>Profil Bilgileri</summary>
+<img src="https://user-images.githubusercontent.com/36954450/113744732-a4c9f500-970d-11eb-97ce-34f431762cd3.jpg" width="65%">
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
