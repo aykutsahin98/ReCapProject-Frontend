@@ -13,7 +13,7 @@
 
 ## Proje Arayüzü 
 <summary>Anasayfa Ekranı</summary>
-<img src="https://user-images.githubusercontent.com/36954450/113893746-fb980300-97cf-11eb-9573-986d4a71a720.jpg width="%64">
+<img src="https://user-images.githubusercontent.com/36954450/113893746-fb980300-97cf-11eb-9573-986d4a71a720.jpg" width="%64">
 
 <summary>Araç Listesi</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113742487-587db580-970b-11eb-9a33-2c437c005979.jpg" width="65%">
