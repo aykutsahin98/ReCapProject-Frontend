@@ -11,6 +11,9 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-v5.0.0--beta2-blueviolet?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![TypeScript](https://img.shields.io/badge/Typescript-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
+## Bana Buradan Ulaşabilirsiniz
+[![Linkedin Badge](https://img.shields.io/badge/aykutsahiin-follow%20on%20linkedin-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aykutsahiin/)<hr>
+
 ## Proje Arayüzü 
 <summary>Anasayfa Ekranı</summary>
 <img src="https://user-images.githubusercontent.com/36954450/113893746-fb980300-97cf-11eb-9573-986d4a71a720.jpg" width="%64">
